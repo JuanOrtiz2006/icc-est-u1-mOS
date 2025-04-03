@@ -7,11 +7,17 @@ public class ShellSort {
             for(int i=gap;i<n;i++){
                 int temp=arr[i];
                 int j=i;
-                while(orden=true && j>=gap && arr[j-gap]>temp){
-                    System.out.printf("Cambioes en Gap: %d",gap);
-                    System.out.println("\nCambio de " + arr[j] +" y " + arr[j-gap]);
-                    arr[j]=arr[j-gap];
-                    j-=gap;
+
+                if(orden==false){
+                    while(j>=gap && arr[j-gap]<temp){
+                        arr[j]=arr[j-gap];
+                        j-=gap;
+                    }
+                } else{
+                    while(j>=gap && arr[j-gap]>temp){
+                        arr[j]=arr[j-gap];
+                        j-=gap;
+                    }                    
                 }
                 arr[j]=temp;
             }
