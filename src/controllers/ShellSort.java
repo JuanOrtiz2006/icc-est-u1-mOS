@@ -2,7 +2,6 @@ package controllers;
 public class ShellSort {
     public void sort(int[] arr, boolean orden) {
         int n= arr.length;
-
         for(int gap=n/2; gap>0; gap/=2){
             for(int i=gap;i<n;i++){
                 int temp=arr[i];
